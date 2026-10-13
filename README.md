@@ -1,6 +1,6 @@
-# Mac 多平台媒体下载器
+# 多平台媒体下载器（Mac / Windows）
 
-一个简单的 macOS 下载工具，可保存网站当前提供的最高可用画质图片和视频。
+一个简单的 Mac 和 Windows 下载工具，可保存网站当前提供的最高可用画质图片和视频。
 
 支持：
 
@@ -11,11 +11,20 @@
 
 ## 下载与安装
 
+### Mac
+
 1. 打开仓库右侧的 **Releases**。
 2. 下载最新版 `mac-media-downloader-v3.1.0.zip`（后续版本号会相应更新）。
 3. 解压后，把“多平台媒体下载器”拖入 Mac 的“应用程序”文件夹。
 4. 第一次打开时，按住 Control 点击 App，选择“打开”。
 5. 选择已经登录相关网站的浏览器，再粘贴链接。
+
+### Windows
+
+1. 打开仓库右侧的 **Releases**。
+2. 下载最新版 `windows-media-downloader-v3.1.0.zip`（后续版本号会相应更新）。
+3. 解压全部文件，然后双击 `Start Downloader.cmd`。
+4. 第一次运行会自动准备所需组件；按窗口提示选择浏览器并粘贴链接。
 
 文件会按网站分类保存在：
 
@@ -23,15 +32,24 @@
 ~/Downloads/媒体下载
 ```
 
-首次运行会自动准备 `gallery-dl` 和 `yt-dlp`。首次处理视频时会通过 Homebrew 准备 FFmpeg，用于合并最高画质的视频、音频并生成通用 MP4。
+首次运行会自动准备 `gallery-dl` 和 `yt-dlp`。Mac 首次处理视频时会通过 Homebrew 准备 FFmpeg；Windows 版会自动准备随 Python 使用的视频合并组件，用于合并最高画质的视频、音频并生成通用 MP4。
 
 ## 系统要求
+
+### Mac
 
 - macOS 10.15 或更高版本
 - 网络连接
 - Python 3（缺少时程序会引导安装）
 - 建议安装 [Homebrew](https://brew.sh/)
 - 对需要登录的内容，建议使用已登录的 Chrome、Safari、Firefox 或 Edge
+
+### Windows
+
+- Windows 10 或 Windows 11
+- 网络连接
+- Python 3.9 或更高版本（缺少时程序会尝试自动安装或引导安装）
+- 对需要登录的内容，建议使用已登录的 Chrome、Edge 或 Firefox
 
 ## 隐私
 
@@ -55,11 +73,14 @@
 - `src/Info.plist`：App 配置
 - `assets/AppIcon.icns`：App 图标
 - `scripts/build-app.sh`：本地重新打包脚本
+- `windows/`：Windows 启动程序、下载主程序、图文处理与使用说明
+- `scripts/build-windows.sh`：本地重新打包 Windows ZIP 的脚本
 
 在仓库根目录运行以下命令，可以在 `dist` 文件夹重新生成 App 和 ZIP：
 
 ```zsh
 ./scripts/build-app.sh
+./scripts/build-windows.sh
 ```
 
 核心下载能力来自 [yt-dlp](https://github.com/yt-dlp/yt-dlp)、[gallery-dl](https://github.com/mikf/gallery-dl) 和 [FFmpeg](https://ffmpeg.org/)。这些项目各自适用其自己的许可证。
