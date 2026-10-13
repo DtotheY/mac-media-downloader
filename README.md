@@ -9,6 +9,14 @@
 - 抖音：视频、图文作品，以及包含 `modal_id` 的网页链接
 - YouTube：普通视频、Shorts 和播放列表
 
+## 支持项目 / Sponsor
+
+如果这个工具对你有帮助，欢迎通过 GitHub Sponsors 支持后续维护、网站适配和功能改进。你也可以选择安装指导或故障排查服务。
+
+[❤️ **赞助这个项目 / Sponsor this project**](https://github.com/sponsors/DtotheY)
+
+> 工具本身保持开源免费；赞助完全自愿。付费协助仅限本人拥有、已获授权或法律允许保存的内容。
+
 ## 下载与安装
 
 ### Mac
